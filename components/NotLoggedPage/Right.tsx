@@ -1,0 +1,33 @@
+
+import React from 'react';
+import {Box ,Flex, Text} from '@chakra-ui/react';
+import TopRight from './TopRight';
+import BottomRight from './BottomRight';
+
+
+export default function Right({}) {
+
+    return(<>
+
+       <Flex flexDirection={'column'} px={{base:'0.33rem',lg:8}} w={{base:'100vw',lg:'77vw'}}  h={'100%'} >
+
+         {/* RIGHT - TOP! */}
+          <Flex height={{base:'37vh',md:'37vh'}}  >
+            <TopRight />
+          </Flex>
+
+         <Text color={'gray.700'} fontSize={'0.871rem'} fontWeight={'600'} fontFamily={'Serif'}>Popular Posts</Text>
+
+
+         {/* LEFT - TOP!  */}
+           <Flex mt={4} w={{base:'98vw',lg:'77vw'}} >
+            <BottomRight />
+           </Flex>
+
+           
+
+       </Flex>
+
+    </>)
+
+}
