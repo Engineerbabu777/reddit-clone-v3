@@ -26,4 +26,4 @@ export default async function handler(req:any, res:any) {
     console.error(error);
     res.status(500).json({ message: 'Something went wrong' });
   }
-}z
+}

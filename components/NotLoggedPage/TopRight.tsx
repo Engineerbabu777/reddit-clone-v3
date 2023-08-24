@@ -8,26 +8,20 @@ import axios from 'axios';
 export default function TopRight({}) {
 
    const [news , setNews] = useState<any>([]);
-  //  const uri = "pub_250901285fc251358a072a42b60c3e9e1ddb5";
-  const uri = "27478ca13d044aecb6b83888aa384d5b";
-  // const url ="https://newsdata.io/api/1/news?apikey=pub_250901285fc251358a072a42b60c3e9e1ddb5&language=en"
+
+  const uri ="https://newsdata.io/api/1/news?apikey=pub_25090d802422d28081e5c8bda097cbeb61aff&language=en"
    const getNews = useCallback(async() => {
 
-    fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey="+uri)
-    .then((response)=> response.json().then((data) => {console.log(data);
-      setNews([data.articles[5], data.articles[3], data.articles[13], data.articles[11]]);
-    }).catch(err => console.log(err.message))).catch((err) => console.log("2",err.message))
+    
+    const apikey = '7d3e001d5a41f939ca40b76f01db8d83';
+    const category = 'general';
+    const url = 'https://gnews.io/api/v4/top-headlines?category=' + category + '&lang=en&country=us&max=10&apikey=' + apikey;
+    
+    fetch(url).then((res:any) => res.json().then((data:any)=>{console.log(data);
+      setNews([data.articles[5], data.articles[3], data.articles[9], data.articles[4]]);
+    
+    }))
       
-    // await axios.get("https://newsapi.org/v2/top-headlines?country=us&apiKey="+uri)
-    //  .then(({data}) => {
-
-    //   // FOR RANDOM NUMBERS!
-
-    //   console.log(data.articles[5]);
-    //  }).catch((err:any) => {
-    //   console.log(err.message);
-    //  })
-
 
 
    },[]);
@@ -50,34 +44,34 @@ export default function TopRight({}) {
 
      { news?.length > 0 && (<>
        <News 
-        img={news[0]?.urlToImage}
-        heading={news[0]?.title?.slice(0,25)}
-        text={news[0]?.title?.slice(0,50)}
-        communityName={news[0]?.source?.name.replace(' ','')}
+        img={news[0]?.image}
+        heading={news[0]?.content?.slice(0,25)}
+        text={news[0]?.description?.slice(0,50)}
+        communityName={news[0]?.source?.name}
         color={'orange'}
         />
 
       <News 
-        img={news[1]?.urlToImage}
-        heading={news[1].title.slice(0,25)}
-        text={news[1].title.slice(0,50)}
-        communityName={news[1].source.name.replace(' ','')}
+        img={news[1]?.image}
+        heading={news[1]?.content?.slice(0,25)}
+        text={news[1]?.description?.slice(0,50)}
+        communityName={news[1]?.source?.name}
         color={'red'}
         />
         
        <News 
-          img={news[2]?.urlToImage}
-          heading={news[2]?.title?.slice(0,25)}
-          text={news[2]?.title?.slice(0,50)}
-          communityName={news[2]?.source?.name.replace(' ','')}
+          img={news[2]?.image}
+          heading={news[2]?.content?.slice(0,25)}
+          text={news[2]?.description?.slice(0,50)}
+          communityName={news[2]?.source?.name}
         color={'blue'}
         />
 
       <News 
-         img={news[3]?.urlToImage}
-         heading={news[3]?.title?.slice(0,25)}
-         text={news[3]?.title?.slice(0,50)}
-         communityName={news[3]?.source?.name.replace(' ','')}
+        img={news[3]?.image}
+        heading={news[3]?.content?.slice(0,25)}
+        text={news[3]?.description?.slice(0,50)}
+        communityName={news[3]?.source?.name}
         color={'white'}
         />
 

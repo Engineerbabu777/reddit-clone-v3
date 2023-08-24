@@ -167,7 +167,7 @@ try{
 </Flex>
 
 {/* ICONS! */}
-<Flex gap={2} alignItems={'center'} justifyContent={'space-between'}>
+<Flex gap={2} alignItems={'center'} justifyContent={'space-between'} display={{base:'flex',md:'none'}}>
   {/* UPVOTES/DOWNVOTES */}
   <Flex alignItems={'center'} gap={1} justifyContent={'center'} color={'gray.500'} _hover={{bg:'#e8e8e8'}}
        p={1} fontWeight={'700'}>
