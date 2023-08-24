@@ -149,7 +149,7 @@ return(<Layout>
               </Box>
               <Box display={'flex'} flexDirection={'column'} fontSize={'0.70rem'} w={'90%'} pr={10}>
                 <Text  fontWeight={'700'} fontSize={'.80rem'}>1 published posts</Text>
-                <Text color={'gray.500'} fontSize={'0.70rem'}>It's more than the previous 7 days</Text>
+                <Text color={'gray.500'} fontSize={'0.70rem'}>It&apos;s more than the previous 7 days</Text>
               </Box>
 
              </Box>
@@ -161,7 +161,7 @@ return(<Layout>
               </Box>
               <Box display={'flex'} flexDirection={'column'} fontSize={'0.70rem'} w={'90%'} pr={10}>
                 <Text  fontWeight={'700'} fontSize={'.80rem'}>0 published comments</Text>
-                <Text color={'gray.500'} fontSize={'0.70rem'}>It's more than the previous 7 days</Text>
+                <Text color={'gray.500'} fontSize={'0.70rem'}>It&apos;s more than the previous 7 days</Text>
               </Box>
 
              </Box>

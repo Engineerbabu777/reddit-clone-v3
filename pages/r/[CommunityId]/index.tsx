@@ -52,7 +52,7 @@ export default function CommunityPage({ communityDoc }: Props) {
                   // LOGIC
     
                // Filtering Community Posts!
-               setPosts([...documents.filter((n)=> n?.communityId === router?.query?.CommunityId)]);
+               setPosts([...documents.filter((n:any)=> n?.communityId === router?.query?.CommunityId)]);
         })
     },[router?.query?.CommunityId]);
 
@@ -79,7 +79,7 @@ export default function CommunityPage({ communityDoc }: Props) {
             description: community.description,
         });
         toast.success('Community Description Updated!!');
-        setCommunity((prev) => ({ box: false, Length: 500, description: '' }));
+        setCommunity((prev:any) => ({ box: false, Length: 500, description: '' }));
 
     }
 
@@ -107,7 +107,7 @@ export default function CommunityPage({ communityDoc }: Props) {
                 <PostCreate />
            {/* POSTS TO SHOW! */}
              { posts?.length > 0 && (<Flex gap={3} alignItems={'center'} flexDirection={'column'}>
-                        {posts?.map((post:any,ind) => (<Posts key={ind} {...post} communityMembers={communityDoc?.MemberIds} id={post.key}/>))}
+                        {posts?.map((post:any,ind:any) => (<Posts key={ind} {...post} communityMembers={communityDoc?.MemberIds} id={post.key}/>))}
              </Flex>)}
              <Text></Text>
             </div>

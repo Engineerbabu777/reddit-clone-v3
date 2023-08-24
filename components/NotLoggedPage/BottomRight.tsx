@@ -12,7 +12,7 @@ export default function BottomRight({}) {
       
        <Flex gap={5} w={{base:'100%',lg:''}} >
 
-        <Flex  flexDirection={'column'} mb={-14}  w={{base:'100%',lg:'auto'}}  >
+        <Flex  flexDirection={'column'} pb={-14}  w={{base:'100vw',lg:''}}   >
          <Main  />
         </Flex>
 

@@ -18,7 +18,7 @@ export default function MainBodyComponent({}) {
         </Box>
 
 
-        <Box position={'relative'} alignItems={'center'} mt={14} justifyContent={'center'}>
+        <Box position={'relative'} alignItems={'center'} mt={12} justifyContent={'center'}>
             <Right />
         </Box>
 

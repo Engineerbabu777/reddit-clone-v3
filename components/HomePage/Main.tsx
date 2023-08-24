@@ -52,7 +52,8 @@ export default function Main() {
 
 
        {/* BEST HOT NEW TOP BOX! */}
-       <Box h={14} bg={'white'} mx={'1px'} mb={4} borderRadius={5} border={'1px solid'} borderColor={'gray.300'}>
+       <Box h={14} bg={'white'}  width={{base:'100vw',md:'100%'}} mb={4} borderRadius={5} border={'1px solid'} 
+        borderColor={'gray.300'}>
         <Flex px={2} alignItems={'center'} w={'100%'} h={'100%'} gap={2}>
 
             {/* USER AVAILABLE! */}
@@ -91,11 +92,12 @@ export default function Main() {
      <Text fontSize={"0.87rem"}  fontWeight={'bold'}>Top</Text>
   </Flex>
 
-  <Flex _hover={{bg:'#EEEEEE'}} cursor={'pointer'} borderRadius={15} p={2} >
+
+  <Flex _hover={{bg:'#EEEEEE'}} cursor={'pointer'} borderRadius={15} p={2} display={{base:'none',md:'block'}} >
     <BsThreeDots size={20} color={'#8e8e8e'}/>
   </Flex>
 
-  <Flex color={'#8e8e8e'} _hover={{bg:'#EEEEEE'}} alignItems={"center"} borderRadius={13} p={1} cursor={'pointer'} ml={'auto'} mr={1}>
+  <Flex color={'#8e8e8e'} _hover={{bg:'#EEEEEE'}} display={{base:'none',md:'flex'}} alignItems={"center"} borderRadius={13} p={1} cursor={'pointer'} ml={'auto'} mr={1}>
     <RiCheckboxIndeterminateLine size={22}/>
     <BsChevronDown size={11} />
   </Flex>
@@ -115,7 +117,7 @@ export default function Main() {
        {/* POSTS! */}
 
        { posts?.length > 0 && (<Flex gap={3} alignItems={'center'} mt={2} flexDirection={'column'}>
-                {posts?.map((post:any,ind) => (<Posts key={ind} {...post} 
+                {posts?.map((post:any,ind:any) => (<Posts key={ind} {...post} 
                     id={post.key}/>))}
         </Flex>)}
 

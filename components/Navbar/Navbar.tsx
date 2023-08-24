@@ -16,7 +16,7 @@ const Navbar = () => {
     },[user])
  
     return (
-            <Box bg={'white'} w={'100%'} h={50} position={'fixed'} top={0} display={'flex'} 
+            <Box bg={'white'} w={'100vw'} h={50} position={'fixed'} top={0} display={'flex'} 
               gap={2} justifyContent={'space-between'} alignItems={'center'} zIndex={10000} px={6} 
               borderBottom={'1px solid'} borderColor={'gray.100'} >
                

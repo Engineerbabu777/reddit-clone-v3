@@ -34,7 +34,7 @@ export default function News({img, heading, text, communityName,color }:Props) {
  
          {/* TEXT */}
          <Text position={'absolute'} px={3} fontSize={'.88rem'} zIndex={1} lineHeight={4}  bottom={8} 
-          zIndex={1000} >
+          >
           {text}
          </Text>
  
@@ -42,7 +42,7 @@ export default function News({img, heading, text, communityName,color }:Props) {
          <Flex position={'absolute'} px={3} bottom={2} gap={1} alignItems={'center'} zIndex={1}>
    
         {/* PIC */}
-          <FaReddit color={color} size={'1.1em'} border={'1px solid black'} />
+          <FaReddit color={color} size={'1.1em'} />
     
         {/* NAME */}
           <Link href={'/'}  className="text-[0.76rem] transition-all duration-250 

@@ -12,17 +12,21 @@ export default function TopRight({}) {
   const uri = "27478ca13d044aecb6b83888aa384d5b";
   // const url ="https://newsdata.io/api/1/news?apikey=pub_250901285fc251358a072a42b60c3e9e1ddb5&language=en"
    const getNews = useCallback(async() => {
+
+    fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey="+uri)
+    .then((response)=> response.json().then((data) => {console.log(data);
+      setNews([data.articles[5], data.articles[3], data.articles[13], data.articles[11]]);
+    }).catch(err => console.log(err.message))).catch((err) => console.log("2",err.message))
       
-    await axios.get("https://newsapi.org/v2/top-headlines?country=us&apiKey="+uri)
-     .then(({data}) => {
+    // await axios.get("https://newsapi.org/v2/top-headlines?country=us&apiKey="+uri)
+    //  .then(({data}) => {
 
-      // FOR RANDOM NUMBERS!
-        setNews([data.articles[3], data.articles[7], data.articles[13], data.articles[17]]);
+    //   // FOR RANDOM NUMBERS!
 
-      console.log(data.articles[5]);
-     }).catch(() => {
-      console.log("Error Occur while fetching news!");
-     })
+    //   console.log(data.articles[5]);
+    //  }).catch((err:any) => {
+    //   console.log(err.message);
+    //  })
 
 
 
@@ -42,7 +46,7 @@ export default function TopRight({}) {
     <Text color={'gray.700'} fontSize={'0.871rem'} fontWeight={'600'} fontFamily={'Serif'}>Trending today</Text>
 
       {/* NEWS! */}
-      <Flex gap={2}  w={{base:'98vw',lg:'75.6vw'}} overflow={'auto'} sx={{ '::-webkit-scrollbar':{ display:'none'}}} >
+      <Flex gap={2}  w={{base:'100vw',lg:'75.6vw'}} overflow={'auto'} sx={{ '::-webkit-scrollbar':{ display:'none'}}} >
 
      { news?.length > 0 && (<>
        <News 

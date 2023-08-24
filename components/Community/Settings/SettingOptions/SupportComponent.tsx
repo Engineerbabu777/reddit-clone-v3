@@ -12,7 +12,6 @@ import {CiSettings} from 'react-icons/ci';
 import {FcReddit} from 'react-icons/fc';
 import {useRouter} from 'next/router';
 import Link from 'next/link'
-import OptionComponent from './SettingOptions/OptionComponent';
 
 export default function SupportComponent({}) {
 

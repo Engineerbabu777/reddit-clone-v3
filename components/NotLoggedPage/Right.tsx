@@ -9,10 +9,11 @@ export default function Right({}) {
 
     return(<>
 
-       <Flex flexDirection={'column'} px={{base:'0.33rem',lg:8}} w={{base:'100vw',lg:'77vw'}}  h={'100%'} >
+       <Flex flexDirection={'column'} px={{base:'0px',lg:8}}  w={{base:'100vw',lg:'80vw'}} 
+        h={'fit-content'} ml={{lg:3.5}}>
 
          {/* RIGHT - TOP! */}
-          <Flex height={{base:'37vh',md:'37vh'}}  >
+          <Flex height={{base:'250px',md:'37vh'}} w={{base:'100vw',lg:'77vw'}}   >
             <TopRight />
           </Flex>
 

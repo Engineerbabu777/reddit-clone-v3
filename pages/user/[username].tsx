@@ -128,7 +128,7 @@ export default function Index({ }) {
           {/* MY COMMUNITIES! OR I AM MODERATOR! */}
           <Box h={'16vh'} w={'100%'} mt={5} bg={'white'} p={2} >
              {/* HEADING */}
-              <Text fontSize={'0.9rem'} fontWeight={'700'}  mr={12} lineHeight={'1rem'} >You're a moderator of these communities</Text>
+              <Text fontSize={'0.9rem'} fontWeight={'700'}  mr={12} lineHeight={'1rem'} >You&apos;re a moderator of these communities</Text>
 
              {/* TEXT + BUTTON! */}
              <Box display={'flex'} justifyContent={'space-between'} mt={4} >

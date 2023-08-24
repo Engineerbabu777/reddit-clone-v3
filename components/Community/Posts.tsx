@@ -95,11 +95,11 @@ try{
 
   return (<>
     {/* MAIN CONTAINER! */}
-    <Box display={'flex'} bg={'green.100'} h={`${type === 'image' ? 'auto' : ''}`} w={'100%'} borderRadius={1} 
-      border={'1px solid'} borderColor={'gray.300'} _hover={{borderColor:'gray.400'}} cursor={'pointer'}>
+    <Box display={'flex'} bg={'green.100'} h={`${type === 'image' ? 'auto' : ''}`} w={{base:'100vw',md:'100%'}} 
+    borderRadius={1} border={'1px solid'} borderColor={'gray.300'} _hover={{borderColor:'gray.400'}} cursor={'pointer'}>
 
       {/* UPVOTES & DOWNVOTES COLUMN! */}
-      <Flex bg={'#f8f9fa'} flexDirection={'column'} alignItems={'center'} px={2} pt={1} >
+      <Flex bg={'#f8f9fa'} flexDirection={'column'} alignItems={'center'} px={2} pt={1} display={{base:'none',md:'block'}} >
 
         {/* UPVOTE ICON */}
         <Text p={"2px"} borderRadius={3}
@@ -137,7 +137,7 @@ try{
                 {communityImage ? (<>
                   <Image src={communityImage} height={'25'} width={'25'} alt={'pic'} />
                     </>) : (<>
-                  <FaReddit color={'orange'} size={'1.6em'} border={'1px solid black'} />
+                  <FaReddit color={'orange'} size={'1.6em'}  />
                   </>)
                  }
   
@@ -167,7 +167,31 @@ try{
 </Flex>
 
 {/* ICONS! */}
-<Flex gap={2} alignItems={'center'} >
+<Flex gap={2} alignItems={'center'} justifyContent={'space-between'}>
+  {/* UPVOTES/DOWNVOTES */}
+  <Flex alignItems={'center'} gap={1} justifyContent={'center'} color={'gray.500'} _hover={{bg:'#e8e8e8'}}
+       p={1} fontWeight={'700'}>
+          {/* UPVOTE ICON */}
+          <Text p={"2px"} borderRadius={3}
+          _hover={{ color: '#ff4500', bg: 'gray.200' }}
+          cursor={'pointer'} color={`${postValues?.u ? '#ff4500' : 'gray.400'}`}>
+          <TbArrowBigUp onClick={() => {;handleVotes('up')}} 
+            size={22} fill={`${postValues.u ? '#ff4500' : 'transparent'}`} />
+          </Text>
+
+          {/* COUNT */}
+           <Text fontSize={'0.76rem'} textAlign={'center'} >{postValues?.numberOfVotes}</Text>
+
+          {/* DOWNVOTE ICON */}
+          <Text p={"2px"} borderRadius={3}
+             _hover={{ color: '#7193ff', bg: 'gray.200' }} cursor={'pointer'} 
+             color={`${postValues?.d ? '#7193ff' : 'gray.400'}`}>
+              <TbArrowBigDown onClick={() =>{handleVotes('down')}} 
+                size={22} fill={`${postValues.d ? '#7193ff' : 'transparent'}`} />
+          </Text>
+
+  </Flex>
+
   {/* COMMENTS! */}
     <Flex alignItems={'center'} gap={1} justifyContent={'center'} color={'gray.500'} _hover={{bg:'#e8e8e8'}}
        p={1} fontWeight={'700'} >
@@ -175,13 +199,13 @@ try{
       <Text fontSize={'0.76rem'} textAlign={'center'}>0 Comments</Text>
     </Flex>
   {/* AWARDS */}
-  <Flex alignItems={'center'} gap={1} justifyContent={'center'} color={'gray.500'} _hover={{bg:'#e8e8e8'}} 
+  <Flex alignItems={'center'} gap={1} justifyContent={'center'} display={{base:'none',md:'flex'}} color={'gray.500'} _hover={{bg:'#e8e8e8'}} 
    p={1} fontWeight={'700'} >
       <AiOutlineGift size={22}/>
       <Text fontSize={'0.76rem'} textAlign={'center'}>Award</Text>
     </Flex>
   {/* SHARES */}
-  <Flex alignItems={'center'} gap={1} justifyContent={'center'} color={'gray.500'} _hover={{bg:'#e8e8e8'}} 
+  <Flex alignItems={'center'} gap={1} justifyContent={'center'} display={{base:'none',md:'flex'}} color={'gray.500'} _hover={{bg:'#e8e8e8'}} 
    p={1} fontWeight={'700'} >
       <GiRapidshareArrow size={22}/>
       <Text fontSize={'0.76rem'} textAlign={'center'}>Share</Text>

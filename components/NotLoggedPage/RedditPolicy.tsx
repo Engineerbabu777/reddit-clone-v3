@@ -32,7 +32,7 @@ export default function RedditPolicy ({}) {
 
 
 <Button onClick={() => { window.scrollTo(0, 0) }} bg={'white'} _hover={{bg:'gray.200',outline:'1px solid gray'}}
- color={'black'}  mt={8} height={'30px'} px={3} letterSpacing={'0.3px'}
+ color={'black'}  mt={8} height={'42px'} py={2} px={3} letterSpacing={'0.3px'}
      >Back to Top</Button>
 
 

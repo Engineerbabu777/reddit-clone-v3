@@ -28,6 +28,7 @@ const Button: ComponentStyleConfig = {
       solid: {
         color: "white",
         bg: "blue.500",
+        height:"60px",
         _hover: {
           bg: "blue.400",
         },

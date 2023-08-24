@@ -50,7 +50,7 @@ export default function Submit({ }) {
     }
     reader.onload = (readerEvent) => {
       if (readerEvent?.target?.result) {
-        setSelectedTab((prev) => ({ ...prev, image: readerEvent.target.result as string }));
+        setSelectedTab((prev:any) => ({ ...prev, image: readerEvent?.target?.result as string }));
       }
     }
   };
@@ -61,7 +61,7 @@ export default function Submit({ }) {
   const onPost = async () => {
     // Check if the user is logged in!
     if (!user) return;
-    setSelectedTab((prev) => ({ ...prev, loading: true }));
+    setSelectedTab((prev:any) => ({ ...prev, loading: true }));
 
 
     // CREATED NEW POST!
@@ -115,7 +115,7 @@ export default function Submit({ }) {
       console.log('Storage database error: ', err);
     }
 
-    setSelectedTab((prev) => ({ ...prev, loading: false }));
+    setSelectedTab((prev:any) => ({ ...prev, loading: false }));
 
   }
 
@@ -199,7 +199,7 @@ export default function Submit({ }) {
             borderRadius={'3px'}
             mt={5}
             value={selectedTab.title}
-            onChange={(e) => { setSelectedTab((prev) => ({ ...prev, title: e.target.value })) }}
+            onChange={(e) => { setSelectedTab((prev:any) => ({ ...prev, title: e.target.value })) }}
           />
 
           {/* IMAGE INSERT BOX! */}
@@ -225,7 +225,7 @@ export default function Submit({ }) {
               border={'1px solid'} borderColor={'gray.300'} borderRadius={5} gap={3}>
               {/* ARRAY OF IMAGES LATER */}
               <Box display={'flex'} mt={2} h={'5rem'} position={'relative'} justifyContent={'center'} alignItems={'center'} w={'5rem'} border={'1px solid'} borderColor={'gray.300'} borderRadius={5} gap={3}>
-                <Text cursor={'pointer'} position={'absolute'} mb={8} ml={12} onClick={() => setSelectedTab((prev) => ({ ...prev, image: '' }))}>
+                <Text cursor={'pointer'} position={'absolute'} mb={8} ml={12} onClick={() => setSelectedTab((prev:any) => ({ ...prev, image: '' }))}>
                   <IoMdCloseCircle size={24} />
                 </Text>
                 <Image src={selectedTab?.image} alt={'image'} width={48} height={48} />

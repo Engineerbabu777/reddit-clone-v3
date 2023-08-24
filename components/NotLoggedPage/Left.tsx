@@ -13,7 +13,7 @@ export default function Left({}) {
 
     return(
     <Box bg={'white'} borderTop={'1px solid'} w={'20vw'} h={'100%'} mt={"50px"}  borderColor={'gray.200'} position={'relative'}  >
-     <Flex bg={'white'}  flexDirection={'column'} w={'20vw'}  h={'92vh'} position={'fixed'} left={0} bottom={0}>
+     <Flex bg={'white'}  flexDirection={'column'} w={'20vw'} h={'92vh'} position={'fixed'} left={0} bottom={0}>
 
 {/* TOP! */}
       <Flex  h={'64vh'} px={4} alignItems={'flex-start'} overflow={'auto'}   flexDirection={'column'} gap={3} pt={3}  >

@@ -3,7 +3,7 @@ import {BsFire} from 'react-icons/bs';
 import {RiRocketFill } from 'react-icons/ri';
 import {GiMeepleCircle} from 'react-icons/gi';
 import {Box , Flex, Text, Grid} from '@chakra-ui/react';
-import {HiOutlineChartBar, HiOutlineArchiveBoxXMark} from 'react-icons/hi'
+import {HiOutlineChartBar} from 'react-icons/hi'
 import {GoComment} from 'react-icons/go';
 import {GiRapidshareArrow} from 'react-icons/gi';
 import { TbArrowBigDown, TbArrowBigUp } from 'react-icons/tb';

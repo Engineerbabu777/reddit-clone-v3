@@ -11,8 +11,8 @@ export type Post = {
     createdAt: any;
     creatorName: string | undefined;
     type: 'image' | 'post' | 'link' | 'poll';
-    votesIds: [string];
-    upVotesIds: [string];
-    downVotesIds: [string],
+    votesIds?: [string] | [];
+    upVotesIds: [string] | [];
+    downVotesIds: [string] | [],
     key?:string;
 }

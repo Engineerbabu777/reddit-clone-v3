@@ -26,7 +26,7 @@ export default function usePostsHook() {
       const NEW_UPVOTE_DATA = [...upVotesIds, user?.uid]; // ADDING NEW!
 
       // REMOVING ID FROM DOWN-VOTE-IDS!
-      const NEW_DOWNVOTE_DATA = [...downVotesIds.filter((id) => id !== user?.uid)];
+      const NEW_DOWNVOTE_DATA = [...downVotesIds.filter((id:any) => id !== user?.uid)];
 
       // UPDATING VOTES STATE!
       set((prev: any) => ({ ...prev, numberOfVotes: voteStatus + 2 }));
@@ -89,7 +89,7 @@ toast.success("Türkiye 😉😉");
 
     // CHECKS IF ALREADY LIKED A POST!
     const isAlreadyDisLiked = downVotesIds?.includes(user?.uid);
-    const isUserlikedAlready = upVotesIds?.includes(user?.uid);
+    const isUserlikedAlready = upVotesIds?.includes(user?.uid as never);
 
     // LIKE TO DISLIKE!
     if (isUserlikedAlready) {

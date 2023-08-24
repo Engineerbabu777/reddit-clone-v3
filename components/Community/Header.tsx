@@ -75,8 +75,7 @@ export default function Header({ Name, image, bgImage , memberIds, isModerator }
     }
 
     return (
-
-        <Box h={'14rem'} mt={13}>
+        <Box h={'14rem'} mt={13} width={{base:'100vw',md:''}}>
 
             {/* BACKGROUND-IMAGE/BACKGROUND-COLOR*/}
             <Box bg={'blue.500'} h={'7.5rem'} >
@@ -95,7 +94,7 @@ export default function Header({ Name, image, bgImage , memberIds, isModerator }
                             {image ? (<>
                                 <Image src={'/test.png'} height={'75'} width={'75'} alt={'pic'} />
                             </>) : (<>
-                                <FaReddit size={'4.8em'} border={'1px solid black'} />
+                                <FaReddit size={`4.8em`} />
                             </>)
 
                             }
@@ -106,7 +105,7 @@ export default function Header({ Name, image, bgImage , memberIds, isModerator }
                     <Box ml={'6.5rem'} display={'flex'} gap={7}>
                         <Flex flexDirection={'column'}>
                             {/* COMMUNITTY NAME */}
-                            <Text pt={2} fontSize={'19pt'} fontWeight={'700'} letterSpacing={'1px'} >{Name}</Text>
+                            <Text pt={2} fontSize={{base:'0.9rem',md:'19pt'}} fontWeight={'700'} letterSpacing={'1px'} >{Name}</Text>
                             {/* COMMUNITY REDDIT r/NAME */}
                             <Text color={'gray.500'} fontWeight={'semibold'} fontSize={'11pt'} mt={1}>r/{Name}</Text>
                         </Flex>
@@ -121,10 +120,11 @@ export default function Header({ Name, image, bgImage , memberIds, isModerator }
                             </Button>
 
                             {/* NOTIFICATIONS! */}
-                            <Box border={'1px solid'} color={'blue.600'} p={'2px'} h={'30px'} w={'30px'}
+                            <Box border={'1px solid'} color={'blue.600'} p={'2px'} h={'30px'} w={'30px'} display={{base:'none',md:'flex'}}
                                 cursor={'pointer'} borderRadius={'100'} mt={3} overflow={'hidden'} borderColor={'blue.500'}>
                                 <IoMdNotifications size={24} />
                             </Box>
+
                         </Flex>
 
                     </Box>
@@ -167,5 +167,5 @@ export default function Header({ Name, image, bgImage , memberIds, isModerator }
 
 
         </Box>
-    )
+    );
 }
